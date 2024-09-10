@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CS 180 Proj 1: Images of the Russian Empire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        /* Flexbox container for side-by-side images */
+        .side-by-side {
+            display: flex;
+            justify-content: space-between; 
+            margin: 20px 0; 
+        }
+        .side-by-side .image-box {
+            text-align: center; 
+        }
+        .side-by-side img {
+            width: 400px; 
+            height: auto; 
+        }
+    </style>
+</head>
+<body>
+    <h1>CS 180 Proj 1: Images of the Russian Empire</h1>
+    <h2>Overview</h2>
+
+    <p></p>
+
+    <h2>Approach</h2>
+
+    <p>
+        For the smaller .jpg images, I used a simple x,y translation model to find the displacements for both the green channel and the red channel. 
+        Using the blue channel as a baseline, I overlayed the red and green channels over the blue channel. I utilized L2Norm and Normalized Cross-Correlation (NCC)
+        to find the displacements that would output the most accurate recreation of the original image. I searched over a 15x15 pixel area for each channel, and used
+        np.roll to shift the channel after finding the displacements. For preprocessing, I cropped 10% from each side of each channel before overlaying the channels.
+        I found that cropping the sides before overlaying the channels generally produced better results.
+    </p>
+
+    <p>
+        For the larger .tif images, I used a pyramid search algorithm to find the displacements, as a naive approach would be significantly slower 
+        due to the large size of the images. I first created an image pyramid for each channel by downscaling the channels by a factor of 0.5 until
+        the channel has 100-200 pixels. Then starting from the coarsest channel, I overlayed the green and red channels over the blue channel and
+        ran the algorithm I used for the .jpg images to find the displacement. I then scaled up both the channels and the displacements until I 
+        reached the original image size while updating the displacements as I moved down the pyramid. After scaling up the displacement, 
+        I rolled the channel before finding the displacement at the next level.
+    </p>
+
+    <h2>Results</h2>
+
+    <h3>JPG Results</h3>
+
+    <div class="side-by-side">
+        <div class="image-box">
+            <h3>Cathedral with cropping</h3>
+            <img src="media/cathedral_out_cropped.jpg" alt="Cathedral Image">
+        </div>
+        <div class="image-box">
+            <h3>Cathedral without cropping</h3>
+            <img src="media/cathedral_out.jpg" alt="Cathedral no crop Image">
+        </div>
+    </div>
+
+    <div class="side-by-side">
+        <div class="image-box">
+            <h3>Monastery with cropping</h3>
+            <img src="media/monastery_out_cropped.jpg" alt="Monastery Image">
+        </div>
+        <div class="image-box">
+            <h3>Monastery without cropping</h3>
+            <img src="media/monastery_out.jpg" alt="Monastery no crop Image">
+        </div>
+    </div>
+
+    <div class="side-by-side">
+        <div class="image-box">
+            <h3>Tobolsk with cropping</h3>
+            <img src="media/tobolsk_out_cropped.jpg" alt="Tobolsk Image">
+        </div>
+        <div class="image-box">
+            <h3>Tobolsk without cropping</h3>
+            <img src="media/tobolsk_out.jpg" alt="Tobolsk no crop Image">
+        </div>
+    </div>
+
+    <h3>TIF Results</h3>
+
+    <div class="image-container">
+        <h3>Church</h3>
+        <img src="media/church_out.jpg" alt="Church Image" width="400">
+    </div>
+
+    <div class="image-container">
+        <h3>Emir</h3>
+        <img src="media/emir_out.jpg" alt="Emir Image" width="400">
+    </div>
+
+    <div class="image-container">
+        <h3>Harvesters</h3>
+        <img src="media/harvsters_out.jpg" alt="Harvesters Image" width="400">
+    </div>
+
+    <div class="image-container">
+        <h3>Icon</h3>
+        <img src="media/icon_out.jpg" alt="Icon Image" width="400">
+    </div>
+
+    <div class="image-container">
+        <h3>Lady</h3>
+        <img src="media/lady_out.jpg" alt="Lady Image" width="400">
+    </div>
+
+    <div class="image-container">
+        <h3>Melons</h3>
+        <img src="media/melons_out.jpg" alt="Melons Image" width="400">
+    </div>
+
+    <div class="image-container">
+        <h3>Onion Church</h3>
+        <img src="media/onion_church_out.jpg" alt="Onion Church Image" width="400">
+    </div>
+
+    <div class="image-container">
+        <h3>Sculpture</h3>
+        <img src="media/sculpture.jpg" alt="Sculpture Image" width="400">
+    </div>
+
+    <div class="image-container">
+        <h3>Self Portrait</h3>
+        <img src="media/self_portrait.jpg" alt="Self Portrait Image" width="400">
+    </div>
+
+    <div class="image-container">
+        <h3>Three Generations</h3>
+        <img src="media/three_generations.jpg" alt="Three Generations Image" width="400">
+    </div>
+
+    <div class="image-container">
+        <h3>Train</h3>
+        <img src="media/train.jpg" alt="Train Image" width="400">
+    </div>
+
+</body>
+</html>
