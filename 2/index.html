@@ -89,6 +89,41 @@
             <img src="media/cameraman_blurred_edge.png" alt="Monastery no crop Image">
       </div>
     </div>
+
+    <p>
+      Another approach I took with this part was to convolve the gaussian filter with D_x and D_y. 
+      Then, I used these Derivative of Gaussian filters in the same process as 1.1. I convolved these DoG 
+      filters with the original cameraman image. After producing these images, I can confirm that both 
+      methods produce the same results. 
+      
+    </p>
+
+    <div class="side-by-side">
+      <div class="image-box">
+            <h3>D_x Gaussian Filter</h3>
+            <img src="media/cameraman_blurred.png" alt="Monastery Image">
+      </div>
+      <div class="image-box">
+            <h3>D_y Gaussian Filter</h3>
+            <img src="media/cameraman_blurred.png" alt="Monastery Image">
+      </div>
+      <div class="image-box">
+            <h3>X-partial Derivative with Gaussian</h3>
+            <img src="media/xpartialgaussian.png" alt="Monastery no crop Image">
+      </div>
+      <div class="image-box">
+            <h3>Y-partial Derivative with Gaussian</h3>
+            <img src="media/ypartialgaussian.png" alt="Monastery no crop Image">
+      </div>
+      <div class="image-box">
+            <h3>Blurred Gradient Magnitude Image</h3>
+            <img src="media/cameraman_grad_mag_gaussian.png" alt="Monastery no crop Image">
+      </div>
+      <div class="image-box">
+            <h3>Blurred Cameraman Edge Image</h3>
+            <img src="media/cameraman_blurred_edge.png" alt="Monastery no crop Image">
+      </div>
+    </div>
     
   </body>
 </html>
