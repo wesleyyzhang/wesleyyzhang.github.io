@@ -277,6 +277,47 @@
             <img src="media/mike_mario.png" alt="Monastery no crop Image">
       </div>
     </div>
+
+    <h2>2.3: Gaussian and Laplacian Stacks</h2>
+    <p>
+      In this part, I created Gaussian and Laplacian stacks for the images that I want to blend together. For the apple and orange 
+      images, I first created Gaussian stacks with 5 levels each. I used a Gaussain kernel with a kernel size = 10 and a 
+      standard deviation = 10 to create increasingly blurred images at each level. I would take the image at the current
+      top level and then apply the blur to that image. I then placed the newly blurred image at the top of the stack. 
+
+      To create the Laplacian stack, I took the Gaussian stack and subtracted the layer of the next index
+      from the layer of the current index to create a series of high frequency images. The last layer
+      of the Laplacian stack is the same as the last layer of the Gaussian stack. 
+      
+    </p>
+
+    <div class="side-by-side">
+      <div class="image-box">
+            <h3>Apple Gaussian Stack</h3>
+            <img src="media/apple_gaussian.png" alt="Monastery no crop Image">
+      </div>
+    </div>
+    
+    <div class="side-by-side">
+      <div class="image-box">
+            <h3>Orange Gaussian Stack</h3>
+            <img src="media/orange_gaussian.png" alt="Monastery no crop Image">
+      </div>
+    </div>
+
+    <div class="side-by-side">
+      <div class="image-box">
+            <h3>Apple Laplacian Stack</h3>
+            <img src="media/apple_laplacian.png" alt="Monastery no crop Image">
+      </div>
+    </div>
+
+    <div class="side-by-side">
+      <div class="image-box">
+            <h3>Orange Laplacian Stack</h3>
+            <img src="media/orange_laplacian.png" alt="Monastery no crop Image">
+      </div>
+    </div>
     
   </body>
 </html>
