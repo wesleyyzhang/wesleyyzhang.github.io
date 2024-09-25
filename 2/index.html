@@ -325,6 +325,37 @@
             <img src="media/orange_laplacian.png" alt="Monastery no crop Image">
       </div>
     </div>
+
+    <h2>2.4: Gaussian and Laplacian Stacks</h2>
+    <p>
+      To finish up the set up for the blending of images, I created another Gaussian stack for the 
+      mask that I would be using to combine the images of the apple and orange. For this 
+      mask, I used a kernel size = 100 and a standard deviation = 5000. I then iterated through
+      the layers of the Gaussian stack of the mask along with the layers of the apple and orange
+      Laplacian stacks. For each layer, I multiplied the image of the apple Laplacian with 
+      (1 - Gaussian mask) and added that to the product of the orange Laplacian with (Gaussian mask).
+      After iterating through all of the layers, I then summed up all of the layers of the 
+      resulting stack to produce the final oraple image. 
+      
+      
+    </p>
+
+    <div class="side-by-side">
+      <div class="image-box">
+            <h3>Apple Image</h3>
+            <img src="media/mike.jpg" alt="Monastery no crop Image">
+      </div>
+      <div class="image-box">
+            <h3>Orange Image</h3>
+            <img src="media/mario.jpg" alt="Monastery no crop Image">
+      </div>
+      <div class="image-box">
+            <h3>Oraple Image</h3>
+            <img src="media/mike_mario.png" alt="Monastery no crop Image">
+      </div>
+    </div>
+
+
     
   </body>
 </html>
