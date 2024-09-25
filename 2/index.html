@@ -182,6 +182,34 @@
             <img src="media/sharpened_wesley.png" alt="Monastery no crop Image">
       </div>
     </div>
+
+    <h2>2.2: Hybrid Images</h2>
+    <p>
+      The goal of this part is to take two different images and create a hybrid image. In this hybrid
+      image, the viewer will be able to see one picture from up close and the other picture from far away. 
+      To do this, I applied a high pass filter to one image and a low pass filter to the other image. 
+      For the low_pass, I convolved a gaussian kernel to the image to create a blurred version of that image.
+      For the high_pass, I first created the blurred version of the iamge and then subtracted the blurred
+      version from the original version. I then blended the high frequency image with the low frequency
+      image to create the hybrid image. 
+      
+    </p>
+
+    <div class="side-by-side">
+      <div class="image-box">
+            <h3>Original Wesley Image</h3>
+            <img src="media/wesley.jpg" alt="Monastery no crop Image">
+      </div>
+      <div class="image-box">
+            <h3>Blurred Wesley Image</h3>
+            <img src="media/blurred_wesley.png" alt="Monastery no crop Image">
+      </div>
+      <div class="image-box">
+            <h3>High Frequency Wesley Image</h3>
+            <img src="media/high_freq_wesley.png" alt="Monastery no crop Image">
+      </div>
+    </div>
+    
     
     
   </body>
