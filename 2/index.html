@@ -45,7 +45,7 @@
 
     <h2>1.1: Finite Difference Operator</h2>
     <p>
-      First, I convolved the iamge of the cameraman with the finite difference operators D_x = [1, -1] and D_y = 
+      First, I convolved the image of the cameraman with the finite difference operators D_x = [1, -1] and D_y = 
       [[1], [-1]] to get the image's x-partial derivative and y-partial derivative. I then used the gradient magnitude formula 
       to create the gradient magnitude image of the cameraman. The gradient magnitude formula is 
       sqrt(xpartial**2 + ypartial**2). In order to generate the edge image of the cameraman, I used a 
@@ -211,7 +211,7 @@
       image, the viewer will be able to see one picture from up close and the other picture from far away. 
       To do this, I applied a high pass filter to one image and a low pass filter to the other image. 
       For the low_pass, I convolved a gaussian kernel to the image to create a blurred version of that image.
-      For the high_pass, I first created the blurred version of the iamge and then subtracted the blurred
+      For the high_pass, I first created the blurred version of the image and then subtracted the blurred
       version from the original version. I then blended the high frequency image with the low frequency
       image to create the hybrid image. 
       
@@ -339,7 +339,7 @@
       </div>
     </div>
 
-    <h2>2.4: Gaussian and Laplacian Stacks</h2>
+    <h2>2.4: Multiresolution Blending</h2>
     <p>
       To finish up the set up for the blending of images, I created another Gaussian stack for the 
       mask that I would be using to combine the images of the apple and orange. For this 
