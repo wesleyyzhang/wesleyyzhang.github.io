@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>CS 180 Proj 1: Images of the Russian Empire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        /* Flexbox container for side-by-side images */
+        .side-by-side {
+            display: flex;
+            justify-content: space-between; 
+            margin: 20px 0; 
+        }
+        .side-by-side .image-box {
+            text-align: center; 
+        }
+        .side-by-side img {
+            width: 400px; 
+            height: auto; 
+        }
+    </style>
+  </head>
   <body>
     <h1>CS 180 Proj 2: Fun with Filters and Frequencies!</h1>
 
     <h2>1.1: Finite Difference Operator</h2>
     <p>
-      First, I convolved the iamge of the cameraman with the finite difference operators D_x = [1, -1]
+      First, I convolved the iamge of the cameraman with the finite difference operators D_x = [1, -1] and D_y = 
+      [[1], [-1]] to get the image's x-partial derivative and y-partial derivative. I then used the gradient magnitude formula 
+      to create the gradient magnitude image of the cameraman. The gradient magnitude formula is 
+      sqrt(xpartial**2 + ypartial**2). In order to generate the edge image of the cameraman, I used a 
+      threshold = 0.2. 
+      
     </p>
   </body>
 </html>
