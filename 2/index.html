@@ -127,6 +127,20 @@
             <img src="media/cameraman_dog_edge.png" alt="Monastery no crop Image">
       </div>
     </div>
+
+    <h2>2.1: Image Sharpening</h2>
+    <p>
+      First, I created a 2d gaussian kernel using cv2.getGaussianKernel() with a kernel size = 10 
+      and a standard deviation = 2. I then convolved this gaussian kernel with the original image of 
+      the Taj Mahal to blur it. I then subtracted the blurred image from the original image to produce
+      an image of the high frequencies. I then multiplied the high frequency image with an alpha
+      value which I declared as alpha = 2, and added this back to the original image. 
+      Formula: Sharpened_image = original_image + alpha * high_frequency_image. 
+      
+    </p>
+
+    
+    
     
   </body>
 </html>
