@@ -56,6 +56,17 @@
             <img src="media/cameraman_edge_image.png" alt="Monastery no crop Image">
       </div>
     </div>
+
+    <h2>1.2: Derivative of Gaussian Filters</h2>
+    <p>
+      In this part, I convolved the image of the cameraman with a gaussian filter in order to blur the image. 
+      The 1d gaussian kernel was created using cv2.getGaussianKernel() with a kernel size = 2 and a standard deviation
+      = 10. The 2d gaussian kernel was created by taking an outer product of the 1d gaussian with its transpose.
+      I then repeated the same steps for the previous part using the blurred image. The most notable difference 
+      between part 1.2 and 1.1 was that the edges were much more defined in the edge image of 1.2. The blurring
+      effect also made the edges smoother in 1.2.
+      
+    </p>
     
   </body>
 </html>
