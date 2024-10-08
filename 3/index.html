@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CS 180 Proj 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        /* Flexbox container for side-by-side images */
+        .side-by-side {
+            display: flex;
+            justify-content: space-between; 
+            margin: 20px 0; 
+        }
+        .side-by-side .image-box {
+            text-align: center; 
+        }
+        .side-by-side img {
+            width: 250px; 
+            height: auto; 
+        }
+        .image-box img {
+          height: 250px;
+          width: auto;
+        }
+        .long {
+          display: flex;
+        }
+        .long_box img {
+          width: 5000px;
+          height: auto;
+        }
+        .bballs {
+          height: 300px;
+          width: auto;
+        }
+        .bball {
+          display: flex;
+        }
+    </style>
+  </head>
 
+  <body>
+    <h1>CS 180 Proj 3: Face Morphing</h1>
+
+    <h2>Part 1: Defining Correspondences</h2>
+
+    <div class="image-box">
+          <h3>Delauney Triangulation of Both Images</h3>
+          <img src="media/delauney.jpg" alt="Monastery Image">
+    </div>
+    
+
+    <h2>Part 2: Computing the "Mid-Way" Face</h2>
+
+    <h2>Part 3: The Morph Sequence</h2>
+
+    <h2>Part 4: The "Mean face" of a population</h2>
+
+    <h2>Part 5: Caricatures: Extrapolating from the mean</h2>
+
+    <h2>Bells and Whistles: Changing Ethnicity</h2>
+
+    
+  </body>
+</html>
