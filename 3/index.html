@@ -111,7 +111,9 @@
     <h2>Part 4: The "Mean face" of a population</h2>
 
     <p>
-      For this part, I used faces from the FEI Face Database. I first computed the average faces of the dataset which are shown below:
+      For this part, I used faces from the FEI Face Database. I first computed the average face of the dataset which is shown below. I did this by 
+      computing the average face shape of the whole population, then morphing each of the faces in the dataset into the average shape, and
+      finally computing the average of all of the warped faces. 
       
     </p>
 
@@ -149,12 +151,12 @@
 
     <div class="image-box">
           <h3>My Face Warped to Average Face</h3>
-          <img src="media/newimage.jpg" alt="Monastery Image">
+          <img src="media/image3.jpg" alt="Monastery Image">
     </div>
 
     <div class="image-box">
           <h3>Average Face Warped to My Face</h3>
-          <img src="media/averagewarpedtowesley.jpg" alt="Monastery Image">
+          <img src="media/image1.jpg" alt="Monastery Image">
     </div>
 
     
@@ -162,13 +164,13 @@
 
     <p>
       To create a caricature of my own face, I extrapolated from the population mean I calculated in the last step by setting the warp fraction value to be outside the bounds
-      of 0 and 1. I used an alpha value = 2:
+      of 0 and 1. I used an alpha value = 1.5:
 
     </p>
 
     <div class="image-box">
           <h3>Caricature of My Face</h3>
-          <img src="media/Caricature.jpg" alt="Monastery Image">
+          <img src="media/image2.jpg" alt="Monastery Image">
     </div>
 
     <h2>Bells and Whistles: Changing Ethnicity</h2>
