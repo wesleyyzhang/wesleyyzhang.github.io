@@ -110,6 +110,11 @@
 
     <h2>Part 4: The "Mean face" of a population</h2>
 
+    <p>
+      For this part, I used faces from the FEI Face Database. I first computed the average faces of the dataset which are shown below:
+      
+    </p>
+
     <div class="side-by-side">
       <div class="image-box">
             <h3>Average Person</h3>
@@ -121,6 +126,11 @@
       </div>
     </div>
 
+    <p>
+      Then, using the average face I computed, I warped some example faces to the shape of the average face. The results are shown below:
+
+    </p>
+
     <div class="image-box">
           <h3>Warped Male</h3>
           <img src="media/warpedperson.jpg" alt="Monastery Image">
@@ -130,6 +140,11 @@
           <h3>Warped Female</h3>
           <img src="media/femalewarptoaverage.jpg" alt="Monastery Image">
     </div>
+
+    <p>
+      I then warped my own face to the shape of the average face, and I also warped the average face to the shape of my own face:
+
+    </p>
 
     <div class="image-box">
           <h3>My Face Warped to Average Face</h3>
@@ -144,12 +159,24 @@
     
     <h2>Part 5: Caricatures: Extrapolating from the mean</h2>
 
+    <p>
+      To create a caricature of my own face, I extrapolated from the population mean I calculated in the last step by setting the warp fraction value to be outside the bounds
+      of 0 and 1. I used an alpha value = 2:
+
+    </p>
+
     <div class="image-box">
           <h3>Caricature of My Face</h3>
           <img src="media/Caricature.jpg" alt="Monastery Image">
     </div>
 
     <h2>Bells and Whistles: Changing Ethnicity</h2>
+
+    <p>
+      For this part, I decided to change the ethinicity of my face to be that of a Caucasian person. The images I used for this part
+      are shown below: 
+
+    </p>
 
     <div class="side-by-side">
       <div class="image-box">
@@ -162,16 +189,32 @@
       </div>
     </div>
 
+    <p>
+      First, I morphed my face to the face shape of the Average English Male using the techniques in the previous parts:
+      
+    </p>
+
     <div class="image-box">
           <h3>Morphing My Shape to Average English Face</h3>
           <img src="media/warpedwesleyeurope.jpg" alt="Monastery Image">
     </div>
+
+    <p>
+      Next, I morphed my appearance to that of the Average English Male. First, I warped the Average English Male face to my own face shape. I then
+      averaged together my own face with the warped Average English Male:
+      
+    </p>
 
     <div class="image-box">
           <h3>Morphing My Appearance to Average English Face</h3>
           <img src="media/europeappearancewesley.jpg" alt="Monastery Image">
     </div>
 
+    <p>
+      Lastly, I morphed both my shape and appearance to that of the Average English Male:
+      
+    </p>
+    
     <div class="image-box">
           <h3>Morphing Both Shape and Appearance to Average English Face</h3>
           <img src="media/warpedappearancewesley.jpg" alt="Monastery Image">
