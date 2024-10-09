@@ -46,6 +46,13 @@
 
     <h2>Part 1: Defining Correspondences</h2>
 
+    <p>
+      First, I defined pairs of corresponding points for the two images using the correspondence tool from the CS180 website. In order to lessen the potential for 
+      triangle deformations, I took the average of the two sets of points and used the averaged set to create the Delaunay triangulation. I have displayed both 
+      of the images I will use for the face morphing along with their respective keypoints below:
+      
+    </p>
+
     <div class="image-box">
           <h3>Delauney Triangulation of Both Images</h3>
           <img src="media/delauney.jpg" alt="Monastery Image">
@@ -53,6 +60,17 @@
     
 
     <h2>Part 2: Computing the "Mid-Way" Face</h2>
+
+    <p>
+      Before computing the entire morph sequence for the two faces, I computed the average face between the two faces. In order to do this, I performed the following steps:
+      1. I first computed the average shape using the average of each keypoint location in the two faces. 
+      
+      2. I then warped both faces into the average shape. To do this, I defined the function computeAffine(tri1_pts,tri2_pts) to 
+      compute affine transformation matrices A between two triangles from each of the images. This transformation matrix was then used to implement an inverse warp of all pixels.
+      I used sk.draw.polygon to find all points within a given triangle and applied the inverse transformation matrix to the points. 
+      
+      3. Lastly, I averaged the colors of the two faces together using a dissolve fraction of 0.5. 
+    </p>
 
     <div class="side-by-side">
       <div class="image-box">
