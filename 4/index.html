@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CS 180 Proj 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        /* Flexbox container for side-by-side images */
+        .side-by-side {
+            display: flex;
+            justify-content: space-between; 
+            margin: 20px 0; 
+        }
+        .side-by-side .image-box {
+            text-align: center; 
+        }
+        .side-by-side img {
+            width: 250px; 
+            height: auto; 
+        }
+        .image-box img {
+          height: 500px;
+          width: auto;
+        }
+        .long {
+          display: flex;
+        }
+        .long_box img {
+          width: 5000px;
+          height: auto;
+        }
+        .bballs {
+          height: 300px;
+          width: auto;
+        }
+        .bball {
+          display: flex;
+        }
+    </style>
+  </head>
 
+  <body>
+    <h1>CS 180 Proj 4A: Image Warping and Mosaicing</h1>
+
+    <h2>Part 1: Shoot the Pictures</h2>
+
+    <p>
+      Here are some sample images I took by fixing the center of projection (COP) and rotating my camera while capturing the photos:
+      
+    </p>
+
+    <div class="side-by-side">
+      <div class="image-box">
+        
+            <img src="media/room.png" alt="Monastery Image">
+      </div>
+      <div class="image-box">
+            
+            <img src="media/room2.png" alt="Monastery no crop Image">
+      </div>
+    </div>
+
+    <div class="side-by-side">
+      <div class="image-box">
+            
+            <img src="media/lower_sproul-2.png" alt="Monastery Image">
+      </div>
+      <div class="image-box">
+            
+            <img src="media/lower_sproul2-2.png" alt="Monastery no crop Image">
+      </div>
+    </div>
+
+    <div class="side-by-side">
+      <div class="image-box">
+           
+            <img src="media/zellerbach-2.png" alt="Monastery Image">
+      </div>
+      <div class="image-box">
+          
+            <img src="media/zellerbach2-2.png" alt="Monastery no crop Image">
+      </div>
+    </div>
+
+    <h2>Part 2: Recover Homography Matrices</h2>
+
+    <h2>Part 3: Image Warping</h2>
+
+    <h2>Part 4: Rectification</h2>
+
+    <h2>Part 5: Blending into a Mosaic</h2>
+
+  </body>
