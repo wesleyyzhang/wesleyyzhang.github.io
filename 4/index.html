@@ -87,7 +87,11 @@
     <h2>Part 2: Recover Homography Matrices</h2>
 
     <p>
-      
+      First, I used the given online tool to pick out corresponding points between the chosen images. I then wrote the computeH function which
+      serves to compute the homography matrix that maps the points from the first set of corresponding points to the second set of corresponding
+      points. Below are the equations I used to compute the homography matrix. SVD was used to solve for the homography matrix, 
+      and the homography matrix H was set to the last vector of V. This vector was then converted into a 3x3 matrix, and the
+      matrix was scaled to have the bottom right value equal to 1. 
       
     </p>
 
@@ -104,6 +108,15 @@
     
 
     <h2>Part 3: Image Warping</h2>
+
+    <p>
+      I then used the homography matrix computed in the previous part to warp one image to match up with the other image. 
+      Inverse warping was used to map pixels in the warped output to pixels in the original input image. In order to stitch the images
+      together to create the panaorama, I had to compute the bounding box that would contain both images. I did this by finding the minimum
+      and maximum x and y values among the warped image and the other unwarped image. The bounding box was then filled with the pixels
+      of the warped image and the unwarped image. The function scipy.interpolate.griddata was used for the pixel interpolation. 
+      
+    </p>
 
     <div class="side-by-side">
       <div class="image-box">
@@ -141,6 +154,11 @@
 
     <h2>Part 4: Rectification</h2>
 
+    <p>
+      To test the implentation of my computeH and warpImage functions, I used those functions to rectify some sample images I took. The results 
+      are displayed below:
+    </p>
+
     <div class="side-by-side">
       <div class="image-box">
            
@@ -164,7 +182,12 @@
     </div>
 
     <h2>Part 5: Blending into a Mosaic</h2>
-    
+
+    <p>
+      In order to blend the stitched together images, I first created an alpha mask by finding the distance transforms of each image
+      and setting the mask equal to distanceTransform1 > distanceTransform2. I then used my code from Project 2 to create the Gaussian and 
+      Laplacian stacks. A level 2 stack was used for each Gaussian and Laplacian. The results of the blending are shown below:
+    </p>
 
     <div class="image-box">
         
