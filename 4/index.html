@@ -270,9 +270,15 @@
     <p>
       The next step is to use Adaptive Non-Maximal Suppression to reduce redundancy in the selected Harris points and ensure that the 
       selected points are more evenly distributed across the image. To do this, the suppression radius is initialized to 0. As the 
-      radius is increased, more and more interest points are added until we reach the desired number of interest points.
+      radius is increased, more and more interest points are added until we reach the desired number of interest points. The 
+      minimum suppression radius is defined below:
       
     </p>
+
+    <div class="image-box">
+          
+          <img src="media/radius.png" alt="Monastery no crop Image">
+    </div>
     
 
     <div class="side-by-side">
