@@ -209,10 +209,19 @@
 
     <h1>CS 180 Proj 4B: Feature Matching for Autostitching</h1>
 
+    <p>
+      In this part, we automatically select corresponding points to stitch images together, which can be a lot less tedious and time consuming
+      than manually selecting all of the corresponding points. We follow the steps outlined in this research paper: https://inst.eecs.berkeley.edu/~cs180/fa24/hw/proj4/Papers/MOPS.pdf. 
+    </p>
+
     
     <h2>Part 1: Harris Interest Point Detector</h2>
 
     <p>
+      First, I used the Harris Interest Point Detector to select key points from images, notably "corners" of an image. I used the functions
+      provided to us to carry out this task, which included the use of the corner_harris function from skimage.feature. The results
+      are displayed below with the selected points overlayed with the images. 
+
       
     </p>
 
@@ -259,6 +268,7 @@
     <h2>Part 2: ANMS: Adaptive Non-Maximal Suppression</h2>
     
     <p>
+      
       
     </p>
 
