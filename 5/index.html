@@ -180,6 +180,11 @@
 
     <h3>1.5 Diffusion Model Sampling</h3>
 
+    <p>
+      In this part, we set i_start = 0 in the iterative denoising function to generate images from scratch. The results
+      are displayed below:
+    </p>
+
     
     <div class="make-small">
       
@@ -189,6 +194,21 @@
     
 
     <h3>1.6 Classifier-Free Guidance (CFG)</h3>
+
+    <p>
+      The results in the previous part are not of high quality, so we use classifier-free guidance to improve
+      our outputted images. We compute both a conditional
+      and unconditional noise estimate, and define our noise estimate according to the following equation:
+    </p>
+
+    <div class="make-smaller">
+      
+          <img src="media/Screenshot 2024-11-19 at 6.15.06 PM.png" alt="Monastery Image">
+    </div>
+
+    <p>
+      The results of CFG iterative denoise are displayed below:
+    </p>
 
     
     <div class="make-small">
