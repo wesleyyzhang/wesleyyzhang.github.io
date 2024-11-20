@@ -139,6 +139,26 @@
   
     <h3>1.4 Iterative Denoising</h3>
 
+    <p>
+      In this part, we will implement iterative denoising, which should produce better results than any of the previous parts. 
+      To do this, we will follow the below equation:
+    </p>
+
+    <div class="make-small">
+           
+          <img src="media/Screenshot 2024-11-19 at 5.50.14 PM.png" alt="Monastery Image">
+    </div>
+
+    <p>
+      Each subsequent step of iterative denoising should produce results that are less and less noisy. 
+      We will use strided timesteps to prevent us from having to run the model 1000 times. 
+
+      We first create the list of strided timesteps, starting at timestep 990 and taking step sized of 30 until we reach 0. The 
+      noisy image after every 5th loop of denoising is displayed. Additionally, the final result of iterative denoising is also
+      displayed along with the result of one-step denoising and classical denoising. 
+    </p>
+    
+
     <div class="side-by-side">
       <div class="image-box">
            
