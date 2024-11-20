@@ -454,13 +454,31 @@
 
     <h3>2.1 Adding Time Conditioning to UNet</h3>
 
+    <p>
+      In this part, we will add time conditioning to the UNet according to the diagram below, where we use FCBlocks to inject the
+      conditioning signal into the Unet. 
+    </p>
+
+    <div class="image-box">
+        <img src="media/Screenshot 2024-11-19 at 7.31.30 PM.png" alt="Monastery Image">
+    </div>
+
     <h3>2.2 Training the UNet</h3>
+
+    <p>
+      To train the UNet, we will pick a random image from the training set, a random time t, and train the denoiser to predict the noise
+      at time t. We will do this until the model converges. 
+    </p>
 
     <div class="make-small">
         <img src="media/5b_part2timeloss.png" alt="Monastery Image">
     </div>
 
     <h3>2.3 Sampling from the UNet</h3>
+
+    <p>
+      We now sample from the time-conditioned UNet, and the samples at the 5th and 20th epochs are shown below. 
+    </p>
 
     <div class="make-small">
         <img src="media/5b_part2timeepoch5.png" alt="Monastery Image">
@@ -472,11 +490,21 @@
 
     <h3>2.4 Adding Class-Conditioning to UNet</h3>
 
+    <p>
+      We can improve the results from the previous part by adding class conditioning. We will do this by adding
+      two more FCBlocks to our UNet. We train our model very similarly to the time-conditioned model, but with the added
+      conditioning vector c and periodic unconditional generation.
+    </p>
+
     <div class="make-small">
         <img src="media/5b_part2classloss.png" alt="Monastery Image">
     </div>
 
     <h3>2.5 Sampling from the Class-Conditioned UNet</h3>
+
+    <p>
+      We now sample from the class-conditioned UNet, and the samples at the 5th and 20th epochs are shown below.
+    </p>
 
     <div class="make-small">
         <img src="media/5b_part2classepoch5.png" alt="Monastery Image">
