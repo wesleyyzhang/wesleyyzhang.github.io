@@ -1,1 +1,77 @@
 
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CS 180 Proj 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        /* Flexbox container for side-by-side images */
+        .side-by-side {
+            display: flex;
+            justify-content: space-between; 
+            margin: 20px 0; 
+        }
+        .side-by-side .image-box {
+            text-align: center; 
+        }
+        .side-by-side img {
+            width: 250px; 
+            height: auto; 
+        }
+        .image-box img {
+          height: 250px;
+          width: auto;
+        }
+        .long {
+          display: flex;
+        }
+        .long_box img {
+          width: 5000px;
+          height: auto;
+        }
+        .bballs {
+          height: 300px;
+          width: auto;
+        }
+        .bball {
+          display: flex;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>CS 180 Final Project: Image Quilting</h1>
+
+    <h2>Part 1: Randomly Sampled Texture</h2>
+
+    <div class="image-box">
+          <h3>Randomly Sampled Texture Image</h3>
+          <img src="media/cameraman.png" alt="Monastery Image">
+    </div>
+
+    <h2>Part 2: Overlapping Patches</h2>
+
+    <div class="image-box">
+          <h3>Texture Generated Using Quilting</h3>
+          <img src="media/cameraman.png" alt="Monastery Image">
+    </div>
+
+    <h2>Part 3: Seam Finding</h2>
+
+    <div class="image-box">
+          <h3>Texture Generated Using Quilting and Seam Finding</h3>
+          <img src="media/cameraman.png" alt="Monastery Image">
+    </div>
+
+    <h2>Part 4: Texture Transfer</h2>
+
+    <div class="image-box">
+          <h3>Texture Transfer Image</h3>
+          <img src="media/cameraman.png" alt="Monastery Image">
+    </div>
+
+    
+  </body>
+</html>
