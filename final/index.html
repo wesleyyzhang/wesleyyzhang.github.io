@@ -50,9 +50,16 @@
     many different techniques to generate the new texture and compare the results to each other. The test image we will be using is shown below:
     </p>
     
-    <div class="image-box">
+    <div class="side-by-side">
+      <div class="image-box">
           <h3>Test Sample</h3>
           <img src="media/bricks_small.jpg" alt="Monastery Image">
+      </div>
+
+      <div class="image-box">
+          <h3>Test Sample</h3>
+          <img src="media/text_small.jpg" alt="Monastery Image">
+      </div>
     </div>
 
     <h2>Part 1: Randomly Sampled Texture</h2>
@@ -61,11 +68,19 @@
     The first approach we will take is to simply randomly sample patches from the test image and add them to the output image until we have filled up all of the space
     in the output image. We can see below that the results are not very impressive, as the new texture doesn't resemble bricks or the original pattern. 
     </p>
-      
-    <div class="image-box">
-          <h3>Randomly Sampled Texture Image</h3>
+
+    <div class="side-by-side">
+      <div class="image-box">
+          <h3>Randomly Sampled Brick Texture Image</h3>
           <img src="media/good image part 1.png" alt="Monastery Image">
+      </div>
+
+      <div class="image-box">
+          <h3>Randomly Sampled Text Texture Image</h3>
+          <img src="media/textpart1.png" alt="Monastery Image">
+      </div>
     </div>
+  
 
     <h2>Part 2: Overlapping Patches</h2>
 
@@ -79,10 +94,18 @@
     much better than the previous part.
     </p>
 
-    <div class="image-box">
-          <h3>Texture Generated Using Quilting</h3>
+    <div class="side-by-side">
+      <div class="image-box">
+          <h3>Brick Texture Generated Using Quilting</h3>
           <img src="media/good image part 2.png" alt="Monastery Image">
+      </div>
+
+      <div class="image-box">
+          <h3>Text Texture Generated Using Quilting</h3>
+          <img src="media/textpart2.png" alt="Monastery Image">
+      </div>
     </div>
+  
 
     <h2>Part 3: Seam Finding</h2>
 
@@ -93,11 +116,17 @@
     can again see that it is much more effective than randomly sampling patches. 
     </p>
     
-
-    <div class="image-box">
-          <h3>Texture Generated Using Quilting and Seam Finding</h3>
+    <div class="side-by-side">
+      <div class="image-box">
+          <h3>Brick Texture Generated Using Quilting and Seam Finding</h3>
           <img src="media/goodimagepart3real.png" alt="Monastery Image">
+      </div>
+      <div class="image-box">
+          <h3>Text Texture Generated Using Quilting and Seam Finding</h3>
+          <img src="media/textpart3.png" alt="Monastery Image">
+      </div>
     </div>
+    
 
     <h2>Part 4: Texture Transfer</h2>
 
@@ -108,10 +137,17 @@
     the gaps between the bricks are effectively aligned. The bricks seem more aligned than in Part 3. 
     </p>
 
-    <div class="image-box">
-          <h3>Texture Transfer Image</h3>
+    <div class="side-by-side">
+      <div class="image-box">
+          <h3>Brick Texture Transfer Image</h3>
           <img src="media/goodimagepart4real.png" alt="Monastery Image">
+      </div>
+      <div class="image-box">
+          <h3>Text Texture Transfer Image</h3>
+          <img src="media/textpart4.png" alt="Monastery Image">
+      </div>
     </div>
+    
 
     
     <h2>Bells and Whistles: Iterative Texture Transfer</h2>
@@ -123,10 +159,17 @@
       will allow us to maintain the target's features while progressively improving the quality of the image. 
     </p>
 
-    <div class="image-box">
-          <h3>Iterative Texture Transfer Image</h3>
+    <div class="side-by-side">
+      <div class="image-box">
+          <h3>Brick Iterative Texture Transfer Image</h3>
           <img src="media/goodimagepart5real.png" alt="Monastery Image">
+      </div>
+      <div class="image-box">
+          <h3>Text Iterative Texture Transfer Image</h3>
+          <img src="media/textpart5.png" alt="Monastery Image">
+      </div>
     </div>
+  
 
     
   </body>
