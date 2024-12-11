@@ -44,10 +44,12 @@
   <body>
     <h1>CS 180 Final Project: Image Quilting</h1>
 
+    <p>
     In this project, I aim to implement the image quilting algorithm for texture synthesis and transfer. We attempt to generate new texture from an already existing
     sample image. The main idea is to sample patches and overlay the samples over already existing portions of the image that have overlapping patterns. We will use
     many different techniques to generate the new texture and compare the results to each other. The test image we will be using is shown below:
-
+    </p>
+    
     <div class="image-box">
           <h3>Test Sample</h3>
           <img src="media/bricks_small.jpg" alt="Monastery Image">
@@ -55,9 +57,11 @@
 
     <h2>Part 1: Randomly Sampled Texture</h2>
 
+    <p>
     The first approach we will take is to simply randomly sample patches from the test image and add them to the output image until we have filled up all of the space
     in the output image. We can see below that the results are not very impressive, as the new texture doesn't resemble bricks or the original pattern. 
-
+    </p>
+      
     <div class="image-box">
           <h3>Randomly Sampled Texture Image</h3>
           <img src="media/good image part 1.png" alt="Monastery Image">
@@ -65,6 +69,7 @@
 
     <h2>Part 2: Overlapping Patches</h2>
 
+    <p>
     In this part, we will use quilting to more effectively generate new texture. We will implement the quilt_simple(sample, out_size, patch_size, overlap, tol) 
     function, which creates an output image 
     by randomly sampling and stiching square patches from the test image. We start from the upper-left corner and proceed row-by-row. Patches will overlap by patch_size pixels
@@ -72,6 +77,7 @@
     of existing patches. The SSD will be calculated using the following equation: ssd_cost = ((M*T)**2).sum() - 2 * cv2.filter2D(I, ddepth=-1, kernel = M*T) + cv2.filter2D(I ** 2, 
     ddepth=-1, kernel=M). Afterwards, we will randomly select one of the tol lowest-cost patches to place in the output image. We can see that the results below are
     much better than the previous part.
+    </p>
 
     <div class="image-box">
           <h3>Texture Generated Using Quilting</h3>
@@ -80,26 +86,46 @@
 
     <h2>Part 3: Seam Finding</h2>
 
+    <p>
     In this next part, we will incorporate seam finding to remove edge artifacts from the overlapping patches. The quilt_cut function will enhance the quilting algorithm
     by finding minimum-cost paths through overlapping regions regions between patches. The seam cost is calculated as the squared RGB differences between 
     the output image and the new patch. The vertical seams can be found by transposing the cost matrix before and after applying the cut function: cut(bndcost.T).T. We
     can again see that it is much more effective than randomly sampling patches. 
+    </p>
+    
 
     <div class="image-box">
           <h3>Texture Generated Using Quilting and Seam Finding</h3>
-          <img src="media/good image part 3.png" alt="Monastery Image">
+          <img src="media/goodimagepart3real.png" alt="Monastery Image">
     </div>
 
     <h2>Part 4: Texture Transfer</h2>
 
+    <p>
     Lastly, we will create a function texture_transfer based on the quilt_cut function for creating a texture sample that is guided by a 
     pair of sample/target correspondence images. There is an additional cost term based on the difference between the sampled source patch 
     and the target patch at the location to be filled. This method seems very effective at generating new texture, as we can see that 
     the gaps between the bricks are effectively aligned. 
+    </p>
 
     <div class="image-box">
           <h3>Texture Transfer Image</h3>
-          <img src="media/good image part 4.png" alt="Monastery Image">
+          <img src="media/goodimagepart4real.png" alt="Monastery Image">
+    </div>
+
+    
+    <h2>Bells and Whistles: Iterative Texture Transfer</h2>
+
+    <p>
+      We will now implement iterative texture transfer according to the research paper by Efros and Freeman. 
+      In this algorithm, we initialize an alpha value and gradually decrease this value in subsequent iterations. We 
+      also use a weighted combination of the original target image and the previous iteration's result as guidance. This
+      will allow us to maintain the target's features while progressively improving the quality of the image. 
+    </p>
+
+    <div class="image-box">
+          <h3>Iterative Texture Transfer Image</h3>
+          <img src="media/goodimagepart5real.png" alt="Monastery Image">
     </div>
 
     
