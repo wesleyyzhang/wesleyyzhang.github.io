@@ -64,6 +64,8 @@
     <h2>Overview</h2>
     
     <p>
+      In this project, we reproduce some of the complex effects of focusing a camera by using simple methods like shifting and averaging 
+      on real lightfield data. We will use the chess dataset from the Stanford Light Field Archive. 
       
     </p>
 
@@ -72,7 +74,19 @@
     <h2>Part 1: Depth Refocusing</h2>
 
     <p>
+      First, we will generate multiple images which focus at different depths within the image. When moving the camera around 
+      while keeping the optical axis unchanged, we see that the position of nearby objects varies significantly, while 
+      the position of far away objects doesn't vary that much. By appropriately averaging shifting the images before averaging
+      them, we can create images which focus at different depths. 
       
+    </p>
+
+    <p>
+      The dataset contains 289 images, which represent a grid of images from (0, 0) to (16, 16), with the image at (8, 8) 
+      being the center image. First, we get the shift of the center image. We then go through every image in the dataset
+      and subtract each of their shifts by the shift of the center image. We then use this newly calculate
+      shift to adjust the image accordingly. We will also introduce the weight variable that controls the strength of the shift. 
+      This can be summed up in these expressions: weight*(y - center_y), weight*(x - center_x). The results are shown below:
     </p>
 
     <div class="side-by-side">
@@ -101,7 +115,11 @@
     <h2>Part 2: Aperture Adjustment</h2>
 
     <p>
-      
+      Next, we will reproduce the effect of changing the aperture of images. We do this by using a smaller subset of images
+      and finding the average of them. Again, we will let the image at (8, 8) be the center. We will now introduce a radius term, 
+      which dictates which images in the grid to use. For example, if the radius were 1, then images that are a distance of 1 away
+      from the center image will be used, which are the images at (7, 7), (7, 8), (7, 9), (8, 7), (8, 8), (8, 9), (9, 7), (9, 8), 
+      and (9, 9). The results are shown below:
     </p>
 
     <div class="side-by-side">
@@ -144,7 +162,10 @@
     <h2>Part 3: Summary</h2>
 
     <p>
-      
+      In this project, I learned how to recreate the effects of adjusting the focus of images by taking a set of images
+      in a dataset and finding the average of the appropriate images. I was able to get a good understanding of why
+      adjusting certain aspects of a camera produces different results. Overall, it was a very interesting topic and 
+      helped me understand a lot!
     </p>
     
   </body>
